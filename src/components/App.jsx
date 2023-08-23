@@ -1,4 +1,12 @@
+import { useState } from 'react';
+
 export const App = () => {
+  const [state, setState] = useState('');
+
+  function inputText(e) {
+    setState(e.target.value);
+  }
+
   return (
     <div
       style={{
@@ -10,7 +18,8 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      Borys
+      <input type="text" onChange={inputText} />
+      <p>{state}</p>
     </div>
   );
 };
